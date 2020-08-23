@@ -1,15 +1,15 @@
-package com.melaniedura.hiltplayground.framework.datasource.cache.mappers
+package com.melaniedura.hiltplayground.framework.datasource.network.mappers
 
 import com.melaniedura.hiltplayground.business.domain.models.Blog
 import com.melaniedura.hiltplayground.business.domain.util.EntityMapper
-import com.melaniedura.hiltplayground.framework.datasource.cache.model.BlogCacheEntity
+import com.melaniedura.hiltplayground.framework.datasource.network.model.BlogNetworkEntity
 import javax.inject.Inject
 
-class CacheMapper
+class NetworkMapper
 @Inject
-constructor(): EntityMapper<BlogCacheEntity, Blog> {
+constructor(): EntityMapper<BlogNetworkEntity, Blog> {
 
-    override fun mapFromEntity(entity: BlogCacheEntity): Blog {
+    override fun mapFromEntity(entity: BlogNetworkEntity): Blog {
         return Blog(
             id = entity.id,
             title = entity.title,
@@ -19,8 +19,8 @@ constructor(): EntityMapper<BlogCacheEntity, Blog> {
         )
     }
 
-    override fun mapToEntity(domainModel: Blog): BlogCacheEntity {
-        return BlogCacheEntity(
+    override fun mapToEntity(domainModel: Blog): BlogNetworkEntity {
+        return BlogNetworkEntity(
             id = domainModel.id,
             title = domainModel.title,
             body = domainModel.body,
@@ -29,7 +29,8 @@ constructor(): EntityMapper<BlogCacheEntity, Blog> {
         )
     }
 
-    fun mapFromEntityList(entities: List<BlogCacheEntity>): List<Blog>{
+
+    fun mapFromEntityList(entities: List<BlogNetworkEntity>): List<Blog>{
         return entities.map { mapFromEntity(it) }
     }
 

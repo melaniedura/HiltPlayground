@@ -9,7 +9,7 @@ import com.melaniedura.hiltplayground.business.interactors.GetBlogs
 class MainViewModel
 @ViewModelInject
 constructor(
-    private val mainRepository: GetBlogs,
+    private val getBlogs: GetBlogs,
     @Assisted private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 }

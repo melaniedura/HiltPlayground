@@ -4,7 +4,11 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.melaniedura.hiltplayground.business.data.network.NetworkDataSource
 import com.melaniedura.hiltplayground.business.data.network.NetworkDataSourceImpl
+import com.melaniedura.hiltplayground.business.domain.models.Blog
+import com.melaniedura.hiltplayground.business.domain.util.EntityMapper
 import com.melaniedura.hiltplayground.framework.datasource.network.BlogService
+import com.melaniedura.hiltplayground.framework.datasource.network.mappers.NetworkMapper
+import com.melaniedura.hiltplayground.framework.datasource.network.model.BlogNetworkEntity
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -43,8 +47,17 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideNetworkDataSource(): NetworkDataSource {
-        return NetworkDataSourceImpl()
+    fun provideNetworkMapper(): EntityMapper<BlogNetworkEntity, Blog> {
+        return NetworkMapper()
+    }
+
+    @Singleton
+    @Provides
+    fun provideNetworkDataSource(
+        blogService: BlogService,
+        networkMapper: NetworkMapper
+    ): NetworkDataSource {
+        return NetworkDataSourceImpl(blogService,networkMapper)
     }
 
 }
