@@ -1,10 +1,9 @@
-package com.melaniedura.hiltplayground.framework.datasource.cache.database
+package com.melaniedura.hiltplayground.room
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.melaniedura.hiltplayground.framework.datasource.cache.model.BlogCacheEntity
 
 @Dao
 interface BlogDao {

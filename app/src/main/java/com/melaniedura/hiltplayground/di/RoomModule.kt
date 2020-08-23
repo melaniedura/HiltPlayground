@@ -2,15 +2,12 @@ package com.melaniedura.hiltplayground.di
 
 import android.content.Context
 import androidx.room.Room
-import com.melaniedura.hiltplayground.business.data.cache.CacheDataSource
-import com.melaniedura.hiltplayground.business.data.cache.CacheDataSourceImpl
-import com.melaniedura.hiltplayground.business.domain.models.Blog
-import com.melaniedura.hiltplayground.business.domain.util.EntityMapper
-import com.melaniedura.hiltplayground.framework.datasource.cache.database.BlogDao
-import com.melaniedura.hiltplayground.framework.datasource.cache.database.BlogDatabase
-import com.melaniedura.hiltplayground.framework.datasource.cache.mappers.CacheMapper
-import com.melaniedura.hiltplayground.framework.datasource.cache.model.BlogCacheEntity
-import com.melaniedura.hiltplayground.framework.presentation.MyApplication
+import com.melaniedura.hiltplayground.model.Blog
+import com.melaniedura.hiltplayground.room.BlogCacheEntity
+import com.melaniedura.hiltplayground.room.BlogDao
+import com.melaniedura.hiltplayground.room.BlogDatabase
+import com.melaniedura.hiltplayground.room.CacheMapper
+import com.melaniedura.hiltplayground.util.EntityMapper
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -20,7 +17,8 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(ApplicationComponent::class)
-object CacheModule {
+
+object RoomModule {
 
     @Singleton
     @Provides
@@ -44,15 +42,6 @@ object CacheModule {
     @Provides
     fun provideBlogDAO(blogDatabase: BlogDatabase): BlogDao {
         return blogDatabase.blogDao()
-    }
-
-    @Singleton
-    @Provides
-    fun provideCacheDataSource(
-        blogDao: BlogDao,
-        cacheMapper: CacheMapper
-    ): CacheDataSource {
-        return CacheDataSourceImpl(blogDao,cacheMapper)
     }
 
 }

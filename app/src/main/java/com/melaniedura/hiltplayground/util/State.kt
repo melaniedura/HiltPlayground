@@ -1,4 +1,4 @@
-package com.melaniedura.hiltplayground.business.domain
+package com.melaniedura.hiltplayground.util
 
 sealed class DataState<out R> {
 

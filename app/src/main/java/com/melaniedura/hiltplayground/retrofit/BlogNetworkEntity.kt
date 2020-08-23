@@ -1,4 +1,4 @@
-package com.melaniedura.hiltplayground.framework.datasource.network.model
+package com.melaniedura.hiltplayground.retrofit
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName

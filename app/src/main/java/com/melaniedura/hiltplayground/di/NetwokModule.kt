@@ -2,13 +2,11 @@ package com.melaniedura.hiltplayground.di
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.melaniedura.hiltplayground.business.data.network.NetworkDataSource
-import com.melaniedura.hiltplayground.business.data.network.NetworkDataSourceImpl
-import com.melaniedura.hiltplayground.business.domain.models.Blog
-import com.melaniedura.hiltplayground.business.domain.util.EntityMapper
-import com.melaniedura.hiltplayground.framework.datasource.network.BlogService
-import com.melaniedura.hiltplayground.framework.datasource.network.mappers.NetworkMapper
-import com.melaniedura.hiltplayground.framework.datasource.network.model.BlogNetworkEntity
+import com.melaniedura.hiltplayground.model.Blog
+import com.melaniedura.hiltplayground.retrofit.BlogNetworkEntity
+import com.melaniedura.hiltplayground.retrofit.BlogRetrofit
+import com.melaniedura.hiltplayground.retrofit.NetworkMapper
+import com.melaniedura.hiltplayground.util.EntityMapper
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -20,6 +18,12 @@ import javax.inject.Singleton
 @Module
 @InstallIn(ApplicationComponent::class)
 object NetworkModule {
+
+    @Singleton
+    @Provides
+    fun provideNetworkMapper(): EntityMapper<BlogNetworkEntity, Blog> {
+        return NetworkMapper()
+    }
 
     @Singleton
     @Provides
@@ -39,25 +43,10 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideBlogService(retrofit: Retrofit.Builder): BlogService {
+    fun provideBlogService(retrofit: Retrofit.Builder): BlogRetrofit {
         return retrofit
             .build()
-            .create(BlogService::class.java)
-    }
-
-    @Singleton
-    @Provides
-    fun provideNetworkMapper(): EntityMapper<BlogNetworkEntity, Blog> {
-        return NetworkMapper()
-    }
-
-    @Singleton
-    @Provides
-    fun provideNetworkDataSource(
-        blogService: BlogService,
-        networkMapper: NetworkMapper
-    ): NetworkDataSource {
-        return NetworkDataSourceImpl(blogService,networkMapper)
+            .create(BlogRetrofit::class.java)
     }
 
 }

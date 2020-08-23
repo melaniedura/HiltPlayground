@@ -1,4 +1,4 @@
-package com.melaniedura.hiltplayground.business.domain.util
+package com.melaniedura.hiltplayground.util
 
 interface EntityMapper <Entity, DomainModel>{
 

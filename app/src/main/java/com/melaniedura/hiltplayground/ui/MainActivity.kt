@@ -1,4 +1,4 @@
-package com.melaniedura.hiltplayground.framework.presentation
+package com.melaniedura.hiltplayground.ui
 
 import android.os.Bundle
 import android.view.View
@@ -6,8 +6,8 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.melaniedura.hiltplayground.R
-import com.melaniedura.hiltplayground.business.domain.DataState
-import com.melaniedura.hiltplayground.business.domain.models.Blog
+import com.melaniedura.hiltplayground.model.Blog
+import com.melaniedura.hiltplayground.util.DataState
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi

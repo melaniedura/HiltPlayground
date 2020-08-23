@@ -1,8 +1,7 @@
-package com.melaniedura.hiltplayground.framework.datasource.network.mappers
+package com.melaniedura.hiltplayground.retrofit
 
-import com.melaniedura.hiltplayground.business.domain.models.Blog
-import com.melaniedura.hiltplayground.business.domain.util.EntityMapper
-import com.melaniedura.hiltplayground.framework.datasource.network.model.BlogNetworkEntity
+import com.melaniedura.hiltplayground.model.Blog
+import com.melaniedura.hiltplayground.util.EntityMapper
 import javax.inject.Inject
 
 class NetworkMapper

@@ -1,4 +1,4 @@
-package com.melaniedura.hiltplayground.framework.presentation
+package com.melaniedura.hiltplayground.ui
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

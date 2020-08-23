@@ -1,4 +1,4 @@
-package com.melaniedura.hiltplayground.business.domain.models
+package com.melaniedura.hiltplayground.model
 
 data class Blog(
     var id: Int,

@@ -1,4 +1,4 @@
-package com.melaniedura.hiltplayground.framework.datasource.cache.model
+package com.melaniedura.hiltplayground.room
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

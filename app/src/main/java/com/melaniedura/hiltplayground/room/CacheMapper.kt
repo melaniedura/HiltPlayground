@@ -1,8 +1,7 @@
-package com.melaniedura.hiltplayground.framework.datasource.cache.mappers
+package com.melaniedura.hiltplayground.room
 
-import com.melaniedura.hiltplayground.business.domain.models.Blog
-import com.melaniedura.hiltplayground.business.domain.util.EntityMapper
-import com.melaniedura.hiltplayground.framework.datasource.cache.model.BlogCacheEntity
+import com.melaniedura.hiltplayground.model.Blog
+import com.melaniedura.hiltplayground.util.EntityMapper
 import javax.inject.Inject
 
 class CacheMapper
