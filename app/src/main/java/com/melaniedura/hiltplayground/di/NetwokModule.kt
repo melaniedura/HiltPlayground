@@ -21,12 +21,6 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideNetworkMapper(): EntityMapper<BlogNetworkEntity, Blog> {
-        return NetworkMapper()
-    }
-
-    @Singleton
-    @Provides
     fun provideGsonBuilder(): Gson {
         return GsonBuilder()
             .excludeFieldsWithoutExposeAnnotation()
