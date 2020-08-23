@@ -1,6 +1,6 @@
 # HiltPlayground
 
-Playgroud for learning how to use Hilt.
+Playground for learning how to use Hilt.
 
 _Basic MVI Repository pattern._
 
