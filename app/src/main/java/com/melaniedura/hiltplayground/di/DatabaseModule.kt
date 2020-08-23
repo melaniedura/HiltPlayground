@@ -2,12 +2,8 @@ package com.melaniedura.hiltplayground.di
 
 import android.content.Context
 import androidx.room.Room
-import com.melaniedura.hiltplayground.model.Blog
-import com.melaniedura.hiltplayground.room.BlogCacheEntity
 import com.melaniedura.hiltplayground.room.BlogDao
 import com.melaniedura.hiltplayground.room.BlogDatabase
-import com.melaniedura.hiltplayground.room.CacheMapper
-import com.melaniedura.hiltplayground.util.EntityMapper
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -18,7 +14,7 @@ import javax.inject.Singleton
 @Module
 @InstallIn(ApplicationComponent::class)
 
-object RoomModule {
+object DatabaseModule {
 
     @Singleton
     @Provides
