@@ -22,12 +22,6 @@ object RoomModule {
 
     @Singleton
     @Provides
-    fun provideCacheMapper(): EntityMapper<BlogCacheEntity, Blog> {
-        return CacheMapper()
-    }
-
-    @Singleton
-    @Provides
     fun provideBlogDb(@ApplicationContext context: Context): BlogDatabase {
         return Room
             .databaseBuilder(
