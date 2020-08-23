@@ -6,7 +6,7 @@ import com.melaniedura.hiltplayground.framework.datasource.network.mappers.Netwo
 import javax.inject.Inject
 
 class NetworkDataSourceImpl
-    @Inject constructor(
+    constructor(
         private val blogService: BlogService,
         private val networkMapper: NetworkMapper
     ): NetworkDataSource {
